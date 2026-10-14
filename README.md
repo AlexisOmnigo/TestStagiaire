@@ -6,11 +6,18 @@ JavaScript (basics, modern syntax, what happens under the hood, the browser), No
 TypeScript, React, Next.js, and the services around them (Tailwind, Supabase, Clerk, Vercel,
 Railway, Shopify's API).
 
+It also has three LeetCode-style tracks (problem-solving patterns, data structures, and
+graphs/backtracking/DP) with 127 problems, each pattern explained with worked examples
+between the problems. The **Practice** page lists all 213 graded problems in the course,
+filterable by difficulty, topic, track and solved status.
+
 Every lesson has:
 
 - **Playgrounds**: editable JavaScript/TypeScript that runs in your browser (in a Web Worker,
   so an infinite loop can be stopped).
-- **Challenges** graded by tests. The solution unlocks after your first attempt.
+- **Challenges** graded by tests. The solution unlocks after your first attempt. Algorithm
+  problems are LeetCode-style (difficulty, examples, constraints, speed tests), and
+  `ListNode`, `TreeNode`, `toList`, `toTree`, `deepEqual`… are predefined like on LeetCode.
 - **A quiz** with an explanation for every answer.
 
 Progress and code drafts are saved in your browser (localStorage). No account needed.
@@ -41,6 +48,7 @@ with no UI libraries.
 ```
 app/                       routes (App Router)
   page.tsx                 home: the path + how the stack fits together
+  practice/page.tsx        every problem in one filterable list
   learn/[track]/page.tsx   track overview
   learn/[track]/[lesson]/  a lesson
 components/                lesson blocks, playground, challenge, quiz, sidebar
