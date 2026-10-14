@@ -3,6 +3,7 @@ import { track as foundations } from "./tracks/00-foundations";
 import { track as devEnvironment } from "./tracks/01-dev-environment";
 import { track as javascriptBasics } from "./tracks/02-javascript-basics";
 import { track as javascriptModern } from "./tracks/03-javascript-modern";
+import { track as yourStack } from "./tracks/10-your-stack";
 import { track as javascriptDeep } from "./tracks/04-javascript-deep";
 import { track as javascriptBrowser } from "./tracks/05-javascript-browser";
 import { track as nodejs } from "./tracks/06-nodejs";
@@ -21,6 +22,7 @@ export const tracks: Track[] = [
   nodejs,
   typescript,
   react,
+  yourStack,
 ].sort((a, b) => a.order - b.order);
 
 export function getTrack(slug: string): Track | undefined {
