@@ -1338,3 +1338,193 @@ tr:last-child td {
   color: var(--good);
   font-weight: 700;
 }
+
+/* ---------- LeetCode-style problems ---------- */
+.challenge-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.diff {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 1px 9px;
+  border-radius: 999px;
+}
+.diff-easy {
+  color: #0f9d6b;
+  background: color-mix(in srgb, #10b981 15%, transparent);
+}
+.diff-medium {
+  color: #c27c0e;
+  background: color-mix(in srgb, #f59e0b 16%, transparent);
+}
+.diff-hard {
+  color: #e0334d;
+  background: color-mix(in srgb, #ef4444 15%, transparent);
+}
+.solved-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--good);
+}
+.challenge {
+  scroll-margin-top: 72px;
+}
+.example {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--border-strong);
+  background: var(--bg-sunken);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.example code,
+.constraints code {
+  font-family: var(--mono);
+  font-size: 0.84em;
+  word-break: break-word;
+}
+.example-label {
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.example-key {
+  font-weight: 650;
+}
+.constraints {
+  margin-top: 12px;
+  font-size: 0.88rem;
+}
+.constraints ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.tag {
+  font-size: 0.74rem;
+  padding: 1px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* ---------- practice page ---------- */
+.practice-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0 14px;
+}
+.practice-filters input,
+.practice-filters select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-raised);
+  color: var(--text);
+}
+.practice-filters input {
+  flex: 1;
+  min-width: 180px;
+}
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.seg button {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  border: 0;
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.seg button + button {
+  border-left: 1px solid var(--border-strong);
+}
+.seg button.on {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+.practice-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.practice-stat {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+}
+.practice-stat strong {
+  display: block;
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+.problem-table td {
+  vertical-align: middle;
+}
+.problem-table a {
+  color: var(--text);
+  font-weight: 600;
+}
+.problem-table .status {
+  width: 28px;
+  text-align: center;
+  color: var(--good);
+  font-weight: 800;
+}
+.problem-table .tag {
+  margin-right: 4px;
+  display: inline-block;
+}
+.hide-sm {
+}
+@media (max-width: 700px) {
+  .hide-sm {
+    display: none;
+  }
+}
+.side-practice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.side-practice:hover,
+.side-practice.is-current {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+.side-practice-icon {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+}

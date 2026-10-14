@@ -36,6 +36,15 @@ const STACK = [
     ],
   },
   {
+    layer: "Problem solving",
+    note: "Thinking like an engineer",
+    items: [
+      { name: "Big-O & patterns", track: "algorithms-patterns" },
+      { name: "Data structures", track: "data-structures" },
+      { name: "Graphs & DP", track: "algorithms-advanced" },
+    ],
+  },
+  {
     layer: "Workflow",
     note: "How code gets there",
     items: [
@@ -66,9 +75,9 @@ export default function Home() {
         </p>
         <div className="hero-actions">
           {first && <ContinueLink titles={titles} first={`${first.track.slug}/${first.lesson.slug}`} />}
-          <a href="#path" className="btn btn-lg btn-secondary">
-            See the path
-          </a>
+          <Link href="/practice" className="btn btn-lg btn-secondary">
+            Practice problems
+          </Link>
         </div>
         <div className="stats">
           <span>{tracks.length} tracks</span>

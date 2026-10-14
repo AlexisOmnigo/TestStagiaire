@@ -2,7 +2,12 @@ import type { Lesson, Track } from "./types";
 import { track as foundations } from "./tracks/00-foundations";
 import { track as devEnvironment } from "./tracks/01-dev-environment";
 import { track as javascriptBasics } from "./tracks/02-javascript-basics";
+import { track as javascriptModern } from "./tracks/03-javascript-modern";
+import { track as javascriptDeep } from "./tracks/04-javascript-deep";
 import { track as javascriptBrowser } from "./tracks/05-javascript-browser";
+import { track as nodejs } from "./tracks/06-nodejs";
+import { track as typescript } from "./tracks/07-typescript";
+import { track as react } from "./tracks/08-react";
 
 export type { Block, Lesson, Track } from "./types";
 
@@ -10,7 +15,12 @@ export const tracks: Track[] = [
   foundations,
   devEnvironment,
   javascriptBasics,
+  javascriptModern,
+  javascriptDeep,
   javascriptBrowser,
+  nodejs,
+  typescript,
+  react,
 ].sort((a, b) => a.order - b.order);
 
 export function getTrack(slug: string): Track | undefined {

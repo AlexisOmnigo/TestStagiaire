@@ -61,6 +61,16 @@ export type Block =
       tests: { name: string; code: string }[];
       lang?: "js" | "ts";
       hint?: string;
+      /** LeetCode-style difficulty; challenges with one appear on the Practice page filters */
+      difficulty?: "easy" | "medium" | "hard";
+      /** LeetCode-style worked examples shown under the prompt */
+      examples?: { input: string; output: string; explanation?: string }[];
+      /** e.g. "1 <= nums.length <= 10^5" */
+      constraints?: string[];
+      /** short topic tags, e.g. ["hash map", "two pointers"] */
+      tags?: string[];
+      /** the complexity the reference solution achieves, e.g. "O(n) time, O(1) space" */
+      complexity?: string;
     }
   /** Multiple choice questions. `answer` is the index of the correct option. */
   | {

@@ -103,7 +103,7 @@ export function LessonBlocks({ blocks, lessonKey }: { blocks: Block[]; lessonKey
             );
           }
           case "challenge":
-            return <Challenge key={key} id={key} {...b} />;
+            return <Challenge key={key} id={key} anchor={`challenge-${i}`} {...b} />;
           case "quiz":
             return <Quiz key={key} questions={b.questions} />;
         }

@@ -45,6 +45,9 @@ export function Sidebar({ tracks }: { tracks: NavTrack[] }) {
         <Link href="/" className="brand sidebar-brand">
           <span className="brand-mark">{"{ }"}</span> Dev Path
         </Link>
+        <Link href="/practice" className={`side-practice ${pathname === "/practice" ? "is-current" : ""}`}>
+          <span className="side-practice-icon">{"</>"}</span> Practice problems
+        </Link>
         <div className="side-progress">
           <div className="side-progress-label">
             <span>Your progress</span>

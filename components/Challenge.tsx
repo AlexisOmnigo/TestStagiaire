@@ -17,6 +17,12 @@ export function Challenge({
   tests,
   hint,
   lang = "js",
+  anchor,
+  difficulty,
+  examples,
+  constraints,
+  tags,
+  complexity,
 }: {
   id: string;
   title: string;
@@ -26,6 +32,12 @@ export function Challenge({
   tests: { name: string; code: string }[];
   hint?: string;
   lang?: "js" | "ts";
+  anchor?: string;
+  difficulty?: "easy" | "medium" | "hard";
+  examples?: { input: string; output: string; explanation?: string }[];
+  constraints?: string[];
+  tags?: string[];
+  complexity?: string;
 }) {
   const [code, setCode] = useState(starter);
   const [results, setResults] = useState<TestResult[] | null>(null);
@@ -64,13 +76,54 @@ export function Challenge({
   const allPass = results !== null && passCount === tests.length;
 
   return (
-    <section className={`challenge ${allPass ? "is-pass" : ""}`}>
+    <section id={anchor} className={`challenge ${allPass ? "is-pass" : ""}`}>
       <div className="challenge-head">
-        <span className="challenge-kicker">Challenge{passedBefore && " · solved ✓"}</span>
+        <div className="challenge-meta">
+          <span className="challenge-kicker">{difficulty ? "Problem" : "Challenge"}</span>
+          {difficulty && <span className={`diff diff-${difficulty}`}>{difficulty}</span>}
+          {passedBefore && <span className="solved-tag">Solved ✓</span>}
+        </div>
         <h3>{title}</h3>
         <p>
           <Inline text={prompt} />
         </p>
+        {examples?.map((ex, i) => (
+          <div key={i} className="example">
+            <div className="example-label">Example {i + 1}</div>
+            <div>
+              <span className="example-key">Input:</span> <code>{ex.input}</code>
+            </div>
+            <div>
+              <span className="example-key">Output:</span> <code>{ex.output}</code>
+            </div>
+            {ex.explanation && (
+              <div className="muted">
+                <span className="example-key">Explanation:</span> <Inline text={ex.explanation} />
+              </div>
+            )}
+          </div>
+        ))}
+        {constraints && constraints.length > 0 && (
+          <div className="constraints">
+            <span className="example-label">Constraints</span>
+            <ul>
+              {constraints.map((c, i) => (
+                <li key={i}>
+                  <code>{c}</code>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {tags && tags.length > 0 && (
+          <div className="tags">
+            {tags.map((t) => (
+              <span key={t} className="tag">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       <div className="pg-head">
         <span className="pg-title">
@@ -147,7 +200,7 @@ export function Challenge({
       {showSolution && (
         <div className="solution">
           <div className="solution-head">
-            <span>One possible solution</span>
+            <span>One possible solution{complexity ? ` · ${complexity}` : ""}</span>
             <button type="button" className="btn-ghost btn-xs" onClick={() => change(solution)}>
               Load into editor
             </button>
