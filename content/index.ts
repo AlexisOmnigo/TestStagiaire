@@ -6,6 +6,7 @@ import { track as javascriptModern } from "./tracks/03-javascript-modern";
 import { track as nextjs } from "./tracks/09-nextjs";
 import { track as yourStack } from "./tracks/10-your-stack";
 import { track as javascriptDeep } from "./tracks/04-javascript-deep";
+import { track as algorithmsPatterns } from "./tracks/04a-algorithms-patterns";
 import { track as algorithmsAdvanced } from "./tracks/04c-algorithms-advanced";
 import { track as javascriptBrowser } from "./tracks/05-javascript-browser";
 import { track as nodejs } from "./tracks/06-nodejs";
@@ -20,6 +21,7 @@ export const tracks: Track[] = [
   javascriptBasics,
   javascriptModern,
   javascriptDeep,
+  algorithmsPatterns,
   algorithmsAdvanced,
   javascriptBrowser,
   nodejs,
